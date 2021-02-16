@@ -10,22 +10,32 @@ namespace snak
     {
         static void Main(string[] args)
         {
-            point p1 = new point();
-            p1.x = 1;
-            p1.y = 3;
-            p1.sym = '*';
-            /*int x1 = 1;
-            int y1 = 3;
-            char sym1 = '*';
+            point p1 = new point(1, 3, '*');
+            p1.Draw();
 
-            Draw(x1, y1, sym1);*/ 
+            point p2 = new point(4, 5, '#');
+            p2.Draw();
 
-            int x2 = 4;
-            int y2 = 5;
-            char sym2 = '#';
+            List<int> numlist = new list<int>();
+            numlist.Add(0);
+            numlist.Add(1);
+            numlist.Add(2);
 
-            Draw(x2, y2, sym2);
+            int x = numlist[0];
+            int y = numlist[1];
+            int z = numlist[2];
 
+            foreach(int i in numlist)
+            {
+                Console.WriteLine(i);
+
+            }
+
+            numlist.RemoveAt(0);
+
+            List<point> plist = new list<point>();
+            plist.Add(p1);
+            plist.Add(p2);
             Console.ReadLine();
         }
         static void Draw(int x, int y, char sym)
@@ -33,5 +43,6 @@ namespace snak
             Console.SetCursorPosition(x, y);
             Console.Write(sym);
         }
-}
+    }
+} 
   
